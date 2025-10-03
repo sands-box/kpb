@@ -266,18 +266,31 @@ h1 {
 }
 
 /* GAYA KARAKTER GURU DENGAN GAMBAR */
-.teacher {
+.teacher1 {
 	width: 150px; 
 	height: 200px;
 	position: relative;
 	margin-bottom: 20px;
 	
 	/* Menggunakan file gambar */
-	background-image: url('image/npc.png'); 
+	background-image: url('image/npc1.png'); 
 	background-size: contain; 
 	background-repeat: no-repeat;
 	background-position: center bottom;
 }
+.teacher2 {
+	width: 150px; 
+	height: 200px;
+	position: relative;
+	margin-bottom: 20px;
+	
+	/* Menggunakan file gambar */
+	background-image: url('image/npc2.png'); 
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
 /* AKHIR GAYA KARAKTER GURU */
 
 .teacher-name {
