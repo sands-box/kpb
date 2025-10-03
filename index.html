@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulau Matematika - Turunan dengan 2 Peubah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pulau Matematika</h1>
+            <p class="subtitle">Belajar Turunan dengan 2 Peubah dengan Cara Menyenangkan</p>
+        </header>
+
+        <div class="island-scene">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            
+            <div class="palm-tree tree-1">
+                <div class="palm-trunk"></div>
+                <div class="palm-leaves"></div>
+            </div>
+            
+            <div class="palm-tree tree-2">
+                <div class="palm-trunk"></div>
+                <div class="palm-leaves"></div>
+            </div>
+            
+            <div class="island"></div>
+            
+            <div class="houses">
+                <div class="house" id="materi-house">
+                    <div class="house-roof"></div>
+                    <div class="house-body">
+                        <div class="house-door"></div>
+                        <div class="house-window"></div>
+                    </div>
+                    <div class="house-label">Materi</div>
+                </div>
+                
+                <div class="house" id="contoh-house">
+                    <div class="house-roof"></div>
+                    <div class="house-body">
+                        <div class="house-door"></div>
+                        <div class="house-window"></div>
+                    </div>
+                    <div class="house-label">Contoh Soal</div>
+                </div>
+                
+                <div class="house" id="latihan-house">
+                    <div class="house-roof"></div>
+                    <div class="house-body">
+                        <div class="house-door"></div>
+                        <div class="house-window"></div>
+                    </div>
+                    <div class="house-label">Latihan Soal</div>
+                </div>
+            </div>
+            
+            <div class="ocean"></div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Materi -->
+    <div class="modal" id="materi-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Materi Turunan dengan 2 Peubah</div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="teacher-section">
+                    <div class="teacher-section">
+						<div class="teacher"></div>
+						<div class="teacher-name">Pak Budi</div>
+						<p>Guru Matematika</p>
+					</div>
+                    <div class="teacher-name">Pak Budi</div>
+                    <p>Guru Matematika</p>
+                </div>
+                <div class="content-section">
+                    <div class="content-tabs">
+                        <div class="tab active" data-tab="pengertian">Pengertian</div>
+                        <div class="tab" data-tab="rumus">Rumus</div>
+                        <div class="tab" data-tab="aplikasi">Aplikasi</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="pengertian-content">
+                        <h2>Pengertian Turunan Parsial</h2>
+                        <p>Turunan parsial adalah turunan dari fungsi dengan beberapa variabel terhadap salah satu variabelnya, dengan menganggap variabel lainnya sebagai konstanta.</p>
+                        
+                        <p>Jika kita memiliki fungsi f(x, y), maka:</p>
+                        <div class="formula">
+                            f<sub>x</sub>(x, y) = ∂f/∂x = turunan f terhadap x (y dianggap konstan)<br>
+                            f<sub>y</sub>(x, y) = ∂f/∂y = turunan f terhadap y (x dianggap konstan)
+                        </div>
+                        
+                        <h3>Notasi Turunan Parsial</h3>
+                        <p>Ada beberapa notasi untuk turunan parsial:</p>
+                        <div class="formula">
+                            ∂f/∂x, f<sub>x</sub>, D<sub>x</sub>f<br>
+                            ∂f/∂y, f<sub>y</sub>, D<sub>y</sub>f
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="rumus-content">
+                        <h2>Rumus Turunan Parsial</h2>
+                        <p>Aturan turunan parsial sama dengan aturan turunan biasa, hanya saja kita memperlakukan variabel lain sebagai konstanta.</p>
+                        
+                        <h3>Contoh Perhitungan</h3>
+                        <p>Misalkan f(x, y) = 3x²y + 2xy³</p>
+                        
+                        <div class="formula">
+                            ∂f/∂x = 6xy + 2y³ (y dianggap konstan)<br>
+                            ∂f/∂y = 3x² + 6xy² (x dianggap konstan)
+                        </div>
+                        
+                        <h3>Aturan Rantai untuk Turunan Parsial</h3>
+                        <p>Jika z = f(x, y) dengan x = g(t) dan y = h(t), maka:</p>
+                        <div class="formula">
+                            dz/dt = (∂f/∂x)(dx/dt) + (∂f/∂y)(dy/dt)
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="aplikasi-content">
+                        <h2>Aplikasi Turunan Parsial</h2>
+                        <p>Turunan parsial memiliki banyak aplikasi dalam berbagai bidang:</p>
+                        
+                        <h3>1. Optimasi Multivariabel</h3>
+                        <p>Digunakan untuk mencari nilai maksimum atau minimum dari fungsi dengan beberapa variabel.</p>
+                        
+                        <h3>2. Ekonomi</h3>
+                        <p>Dalam ekonomi, turunan parsial digunakan untuk menghitung produk marginal, elastisitas, dll.</p>
+                        
+                        <h3>3. Fisika</h3>
+                        <p>Dalam termodinamika, turunan parsial digunakan untuk menghitung perubahan keadaan sistem.</p>
+                        
+                        <h3>4. Machine Learning</h3>
+                        <p>Digunakan dalam gradient descent untuk optimisasi model machine learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Contoh Soal -->
+    <div class="modal" id="contoh-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Contoh Soal Turunan dengan 2 Peubah</div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+						<div class="teacher-section">
+							<div class="teacher"></div>
+							<div class="teacher-name">Pak Budi</div>
+							<p>Guru Matematika</p>
+						</div>
+                    <div class="teacher-name">Pak Budi</div>
+                    <p>Guru Matematika</p>
+                </div>
+                <div class="content-section">
+                    <div class="content-tabs">
+                        <div class="tab active" data-tab="contoh1">Contoh 1</div>
+                        <div class="tab" data-tab="contoh2">Contoh 2</div>
+                        <div class="tab" data-tab="contoh3">Contoh 3</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="contoh1-content">
+                        <h2>Contoh 1: Turunan Parsial Dasar</h2>
+                        <p>Tentukan turunan parsial pertama dari fungsi f(x, y) = x³ + 2x²y - y²</p>
+                        
+                        <div class="example">
+                            <h3>Penyelesaian:</h3>
+                            <p>Untuk ∂f/∂x, kita anggap y sebagai konstanta:</p>
+                            <div class="formula">
+                                ∂f/∂x = 3x² + 4xy
+                            </div>
+                            
+                            <p>Untuk ∂f/∂y, kita anggap x sebagai konstanta:</p>
+                            <div class="formula">
+                                ∂f/∂y = 2x² - 2y
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="contoh2-content">
+                        <h2>Contoh 2: Fungsi Trigonometri</h2>
+                        <p>Tentukan turunan parsial pertama dari fungsi f(x, y) = sin(x²y) + e<sup>xy</sup></p>
+                        
+                        <div class="example">
+                            <h3>Penyelesaian:</h3>
+                            <p>Untuk ∂f/∂x:</p>
+                            <div class="formula">
+                                ∂f/∂x = cos(x²y) · 2xy + e<sup>xy</sup> · y<br>
+                                = 2xy cos(x²y) + y e<sup>xy</sup>
+                            </div>
+                            
+                            <p>Untuk ∂f/∂y:</p>
+                            <div class="formula">
+                                ∂f/∂y = cos(x²y) · x² + e<sup>xy</sup> · x<br>
+                                = x² cos(x²y) + x e<sup>xy</sup>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="contoh3-content">
+                        <h2>Contoh 3: Aturan Rantai</h2>
+                        <p>Jika z = x² + y², dengan x = 2t dan y = 3t, tentukan dz/dt menggunakan aturan rantai.</p>
+                        
+                        <div class="example">
+                            <h3>Penyelesaian:</h3>
+                            <p>Pertama, hitung turunan parsial:</p>
+                            <div class="formula">
+                                ∂z/∂x = 2x<br>
+                                ∂z/∂y = 2y
+                            </div>
+                            
+                            <p>Kemudian hitung dx/dt dan dy/dt:</p>
+                            <div class="formula">
+                                dx/dt = 2<br>
+                                dy/dt = 3
+                            </div>
+                            
+                            <p>Gunakan aturan rantai:</p>
+                            <div class="formula">
+                                dz/dt = (∂z/∂x)(dx/dt) + (∂z/∂y)(dy/dt)<br>
+                                = (2x)(2) + (2y)(3)<br>
+                                = 4x + 6y
+                            </div>
+                            
+                            <p>Substitusi x = 2t dan y = 3t:</p>
+                            <div class="formula">
+                                dz/dt = 4(2t) + 6(3t) = 8t + 18t = 26t
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Latihan Soal -->
+    <div class="modal" id="latihan-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Latihan Soal Turunan dengan 2 Peubah</div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+						<div class="teacher-section">
+							<div class="teacher"></div>
+							<div class="teacher-name">Pak Budi</div>
+							<p>Guru Matematika</p>
+						</div>
+                    <div class="teacher-name">Pak Budi</div>
+                    <p>Guru Matematika</p>
+                </div>
+                <div class="content-section">
+                    <div class="content-tabs">
+                        <div class="tab active" data-tab="latihan1">Latihan 1</div>
+                        <div class="tab" data-tab="latihan2">Latihan 2</div>
+                        <div class="tab" data-tab="latihan3">Latihan 3</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="latihan1-content">
+                        <h2>Latihan 1: Turunan Parsial Dasar</h2>
+                        <p>Tentukan ∂f/∂x dan ∂f/∂y dari fungsi f(x, y) = 3x²y³ + 2x - 5y</p>
+                        
+                        <div class="exercise">
+                            <p>Masukkan jawaban Anda:</p>
+                            <p>∂f/∂x = <input type="text" class="answer-input" id="answer1-x" placeholder="Jawaban untuk ∂f/∂x"></p>
+                            <p>∂f/∂y = <input type="text" class="answer-input" id="answer1-y" placeholder="Jawaban untuk ∂f/∂y"></p>
+                            <button class="check-btn" data-exercise="1">Periksa Jawaban</button>
+                            <div class="result" id="result1"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="latihan2-content">
+                        <h2>Latihan 2: Fungsi Eksponensial</h2>
+                        <p>Tentukan ∂f/∂x dan ∂f/∂y dari fungsi f(x, y) = e<sup>2x+y</sup> + ln(xy)</p>
+                        
+                        <div class="exercise">
+                            <p>Masukkan jawaban Anda:</p>
+                            <p>∂f/∂x = <input type="text" class="answer-input" id="answer2-x" placeholder="Jawaban untuk ∂f/∂x"></p>
+                            <p>∂f/∂y = <input type="text" class="answer-input" id="answer2-y" placeholder="Jawaban untuk ∂f/∂y"></p>
+                            <button class="check-btn" data-exercise="2">Periksa Jawaban</button>
+                            <div class="result" id="result2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="latihan3-content">
+                        <h2>Latihan 3: Aplikasi Aturan Rantai</h2>
+                        <p>Jika z = x²y, dengan x = t² dan y = 2t, tentukan dz/dt menggunakan aturan rantai.</p>
+                        
+                        <div class="exercise">
+                            <p>Masukkan jawaban Anda:</p>
+                            <p>dz/dt = <input type="text" class="answer-input" id="answer3" placeholder="Jawaban untuk dz/dt"></p>
+                            <button class="check-btn" data-exercise="3">Periksa Jawaban</button>
+                            <div class="result" id="result3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>

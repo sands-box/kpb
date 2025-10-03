@@ -1,0 +1,441 @@
+/* style.css */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	position: relative;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 30px;
+	color: #fff;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+.subtitle {
+	font-size: 1.2rem;
+	opacity: 0.9;
+}
+
+/* Pemandangan Pulau */
+.island-scene {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+
+.ocean {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 150px;
+	background: linear-gradient(to bottom, #1E90FF, #000080);
+}
+
+.island {
+	position: absolute;
+	bottom: 150px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	height: 250px;
+	background: linear-gradient(to bottom, #228B22, #006400);
+	border-radius: 50% 50% 0 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.houses {
+	position: absolute;
+	bottom: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 10%;
+}
+
+.house {
+	width: 120px;
+	height: 120px;
+	position: relative;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.house:hover {
+	transform: translateY(-5px);
+}
+
+.house-roof {
+	width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 40px solid #8B4513;
+	position: absolute;
+	top: 0;
+}
+
+.house-body {
+	width: 100px;
+	height: 80px;
+	background: #DEB887;
+	position: absolute;
+	top: 40px;
+	left: 10px;
+	border: 2px solid #8B4513;
+}
+
+.house-door {
+	width: 25px;
+	height: 40px;
+	background: #8B4513;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.house-window {
+	width: 20px;
+	height: 20px;
+	background: #87CEEB;
+	border: 2px solid #8B4513;
+	position: absolute;
+	top: 15px;
+	left: 20px;
+}
+
+.house-label {
+	position: absolute;
+	bottom: -25px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, 0.8);
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-weight: bold;
+	color: #333;
+	white-space: nowrap;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Elemen Dekorasi Pulau */
+.palm-tree {
+	position: absolute;
+	bottom: 150px;
+	width: 30px;
+	height: 150px;
+}
+
+.palm-trunk {
+	width: 10px;
+	height: 100px;
+	background: #8B4513;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+
+.palm-leaves {
+	position: absolute;
+	bottom: 90px;
+	left: 0;
+	width: 30px;
+	height: 60px;
+	background: #228B22;
+	border-radius: 50% 50% 0 0;
+}
+
+.tree-1 {
+	left: 15%;
+}
+
+.tree-2 {
+	left: 85%;
+}
+
+.cloud {
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.cloud-1 {
+	width: 100px;
+	height: 40px;
+	top: 50px;
+	left: 10%;
+}
+
+.cloud-2 {
+	width: 120px;
+	height: 50px;
+	top: 80px;
+	left: 60%;
+}
+
+.cloud-3 {
+	width: 80px;
+	height: 30px;
+	top: 120px;
+	left: 30%;
+}
+
+/* Modal untuk konten */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background: linear-gradient(to bottom right, #f9f9f9, #e6e6e6);
+	width: 90%;
+	max-width: 800px;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: relative;
+}
+
+.modal-header {
+	background: linear-gradient(to right, #228B22, #32CD32);
+	color: white;
+	padding: 15px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.close-btn {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.modal-body {
+	padding: 20px;
+	display: flex;
+	min-height: 400px;
+}
+
+.teacher-section {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-right: 20px;
+	border-right: 1px solid #ddd;
+}
+
+/* GAYA KARAKTER GURU DENGAN GAMBAR */
+.teacher {
+	width: 150px; 
+	height: 200px;
+	position: relative;
+	margin-bottom: 20px;
+	
+	/* Menggunakan file gambar */
+	background-image: url('image/npc.png'); 
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+/* AKHIR GAYA KARAKTER GURU */
+
+.teacher-name {
+	font-weight: bold;
+	margin-top: 10px;
+	color: #333;
+}
+
+.content-section {
+	flex: 1;
+	padding-left: 20px;
+	overflow-y: auto;
+	max-height: 400px;
+}
+
+.content-tabs {
+	display: flex;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+
+.tab {
+	padding: 10px 20px;
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+	border-bottom: 3px solid #228B22;
+	font-weight: bold;
+	color: #228B22;
+}
+
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+h2 {
+	color: #228B22;
+	margin-bottom: 15px;
+	font-size: 1.4rem;
+}
+
+h3 {
+	color: #2E8B57;
+	margin: 15px 0 10px;
+	font-size: 1.2rem;
+}
+
+p {
+	margin-bottom: 15px;
+	line-height: 1.6;
+	color: #333;
+}
+
+.formula {
+	background: #f0f8ff;
+	padding: 15px;
+	border-radius: 8px;
+	border-left: 4px solid #4682B4;
+	margin: 15px 0;
+	font-family: 'Courier New', monospace;
+	font-size: 1.1rem;
+}
+
+.example {
+	background: #f5f5f5;
+	padding: 15px;
+	border-radius: 8px;
+	margin: 15px 0;
+	border-left: 4px solid #32CD32;
+}
+
+.exercise {
+	background: #fffacd;
+	padding: 15px;
+	border-radius: 8px;
+	margin: 15px 0;
+	border-left: 4px solid #FFD700;
+}
+
+.answer-input {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.check-btn {
+	background: #228B22;
+	color: white;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.result {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+/* Animasi */
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.teacher {
+	animation: float 3s ease-in-out infinite;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+	.modal-body {
+		flex-direction: column;
+	}
+	
+	.teacher-section {
+		width: 100%;
+		border-right: none;
+		border-bottom: 1px solid #ddd;
+		padding-right: 0;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.content-section {
+		padding-left: 0;
+	}
+	
+	.houses {
+		padding: 0 5%;
+	}
+	
+	.house {
+		width: 90px;
+		height: 90px;
+	}
+	
+	.house-body {
+		width: 70px;
+		height: 60px;
+	}
+	
+	.house-roof {
+		border-left: 45px solid transparent;
+		border-right: 45px solid transparent;
+		border-bottom: 30px solid #8B4513;
+	}
+}
