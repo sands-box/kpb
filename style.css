@@ -1,13 +1,35 @@
 /* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Ubah font-family agar menggunakan font baru */
+	font-family: 'Holtwood One SC', sans-serif; 
+}
+
+/* ... sisa kode CSS Anda ... */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Holtwood One SC', sans-serif; 
 }
 
 body {
-	background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    /* MENGGUNAKAN GAMBAR BACKGROUND */
+	background-image: url('image/bg.png'); 
+	/* Menggunakan 'contain' agar gambar terlihat utuh dan tidak terpotong */
+	background-size: 110%; 
+	background-repeat: no-repeat;
+    
+    /* PROPERTI background-attachment DIHAPUS, DEFAULTNYA ADALAH 'scroll' */
+	background-position: center top; /* Diubah ke 'top' agar gambar mulai dari atas saat digulir */
+    
+    /* Tambahkan warna latar belakang untuk mengisi ruang kosong yang mungkin muncul */
+    background-color: #87CEEB; 
+    
 	min-height: 100vh;
 	overflow-x: hidden;
 }
@@ -50,95 +72,80 @@ h1 {
 	bottom: 0;
 	width: 100%;
 	height: 150px;
-	background: linear-gradient(to bottom, #1E90FF, #000080);
+	background: transparent; 
 }
 
+/* MODIFIKASI: PULAU DENGAN GAMBAR (image/island.png) */
 .island {
 	position: absolute;
 	bottom: 150px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 80%;
-	height: 250px;
-	background: linear-gradient(to bottom, #228B22, #006400);
-	border-radius: 50% 50% 0 0;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	width: 80%; 
+	height: 250px; 
+    
+	background-image: url('image/bg.png');
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center bottom;
+    
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;
 	cursor: pointer;
 }
+/* AKHIR BLOK PULAU BARU */
 
-.houses {
-	position: absolute;
-	bottom: 200px;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	padding: 0 10%;
-}
 
-.house {
-	width: 120px;
-	height: 120px;
-	position: relative;
-	cursor: pointer;
-	transition: transform 0.3s;
-}
-
-.house:hover {
-	transform: translateY(-5px);
-}
-
-.house-roof {
-	width: 0;
-	height: 0;
-	border-left: 60px solid transparent;
-	border-right: 60px solid transparent;
-	border-bottom: 40px solid #8B4513;
+.map-icons {
 	position: absolute;
 	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.house-body {
-	width: 100px;
-	height: 80px;
-	background: #DEB887;
+.map-icon {
+	width: 100px; /* Lebar ikon */
+	height: 100px; /* Tinggi ikon */
 	position: absolute;
-	top: 40px;
-	left: 10px;
-	border: 2px solid #8B4513;
+	cursor: pointer;
+	transition: transform 0.2s, filter 0.2s;
+    
+    /* MENGGUNAKAN GAMBAR ICON MAP */
+	background-image: url('image/map-icon.png'); /* Ganti dengan nama file ikon peta Anda */
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
-.house-door {
-	width: 25px;
-	height: 40px;
-	background: #8B4513;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
+.map-icon:hover {
+	transform: scale(1.1) translateY(-5px);
+	filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4));
 }
 
-.house-window {
-	width: 20px;
-	height: 20px;
-	background: #87CEEB;
-	border: 2px solid #8B4513;
-	position: absolute;
-	top: 15px;
-	left: 20px;
-}
-
-.house-label {
+.icon-label {
 	position: absolute;
 	bottom: -25px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(255, 255, 255, 0.8);
-	padding: 5px 10px;
-	border-radius: 15px;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 3px 8px;
+	border-radius: 10px;
+	font-size: 0.9rem;
 	font-weight: bold;
 	color: #333;
 	white-space: nowrap;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Bagian .island-scene diubah agar posisinya relatif untuk menampung .map-icons */
+.island-scene {
+	position: relative;
+	width: 100%;
+	height: 500px; /* Pastikan tinggi ini cukup besar */
+	margin-bottom: 50px;
+	overflow: visible; /* Diubah menjadi 'visible' agar label tidak terpotong */
 }
 
 /* Elemen Dekorasi Pulau */
@@ -251,9 +258,9 @@ h1 {
 }
 
 .modal-body {
-	padding: 20px;
+	padding: 50px;
 	display: flex;
-	min-height: 400px;
+	min-height: 500px;
 }
 
 .teacher-section {
@@ -265,33 +272,39 @@ h1 {
 	border-right: 1px solid #ddd;
 }
 
-/* GAYA KARAKTER GURU DENGAN GAMBAR */
-.teacher1 {
+
+/* style.css (Tambahkan kode ini setelah gaya .teacher-section, atau ubah gaya .teacher yang sudah ada) */
+
+/* GAYA DASAR UNTUK SEMUA GURU */
+.teacher { 
 	width: 150px; 
 	height: 200px;
 	position: relative;
 	margin-bottom: 20px;
-	
-	/* Menggunakan file gambar */
-	background-image: url('image/npc1.png'); 
 	background-size: contain; 
 	background-repeat: no-repeat;
 	background-position: center bottom;
-}
-.teacher2 {
-	width: 150px; 
-	height: 200px;
-	position: relative;
-	margin-bottom: 20px;
-	
-	/* Menggunakan file gambar */
-	background-image: url('image/npc2.png'); 
-	background-size: contain; 
-	background-repeat: no-repeat;
-	background-position: center bottom;
+    animation: float 3s ease-in-out infinite; /* Biarkan animasi tetap ada */
 }
 
-/* AKHIR GAYA KARAKTER GURU */
+/* GAMBAR UNTUK MODAL MATERI (Miss Fafaa) */
+.teacher-fafa {
+    background-image: url('image/teacher 1.png'); /* Ganti dengan nama file gambar Miss Fafaa */
+}
+
+/* GAMBAR UNTUK MODAL CONTOH SOAL (Miss Alipp) */
+.teacher-alipp {
+    background-image: url('image/teacher 2.png'); /* Ganti dengan nama file gambar Miss Alipp */
+}
+
+/* GAMBAR UNTUK MODAL LATIHAN SOAL (Mr. Arsad) */
+.teacher-arsad {
+    background-image: url('image/teacher 3.png'); /* Ganti dengan nama file gambar Mr. Arsad */
+}
+
+/* Hapus gaya .teacher yang lama jika sudah ada, dan ganti dengan kode di atas. 
+   Jika Anda hanya memiliki satu file 'npc.png', ganti nama file di atas atau gunakan gambar yang berbeda. */
+}
 
 .teacher-name {
 	font-weight: bold;
