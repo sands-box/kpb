@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulau Matematika - Turunan </title>
+    <title> Math Maps - Turunan dengan 2 Peubah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Pulau Matematika</h1>
-            <p class="subtitle">Belajar Turunan dengan Cara Menyenangkan</p>
+            <h1>Math Maps</h1>
+            <p class="subtitle">Belajar Turunan dengan Asyik</p>
         </header>
 
         <div class="island-scene">
@@ -18,50 +18,31 @@
             <div class="cloud cloud-2"></div>
             <div class="cloud cloud-3"></div>
             
-            <div class="palm-tree tree-1">
-                <div class="palm-trunk"></div>
-                <div class="palm-leaves"></div>
-            </div>
+            <div class="island"><div>
             
-            <div class="palm-tree tree-2">
-                <div class="palm-trunk"></div>
-                <div class="palm-leaves"></div>
-            </div>
-            
-            <div class="island"></div>
-            
-            <div class="houses">
-                <div class="house" id="materi-house">
-                    <div class="house-roof"></div>
-                    <div class="house-body">
-                        <div class="house-door"></div>
-                        <div class="house-window"></div>
-                    </div>
-                    <div class="house-label">Materi</div>
-                </div>
-                
-                <div class="house" id="contoh-house">
-                    <div class="house-roof"></div>
-                    <div class="house-body">
-                        <div class="house-door"></div>
-                        <div class="house-window"></div>
-                    </div>
-                    <div class="house-label">Contoh Soal</div>
-                </div>
-                
-                <div class="house" id="latihan-house">
-                    <div class="house-roof"></div>
-                    <div class="house-body">
-                        <div class="house-door"></div>
-                        <div class="house-window"></div>
-                    </div>
-                    <div class="house-label">Latihan Soal</div>
-                </div>
-            </div>
-            
-            <div class="ocean"></div>
+            <div class="island-scene">
+    <div class="map-icons">
+        
+        <div class="map-icon" id="materi-icon" style="top: 250px; left: 25%;">
+            <div class="icon-label">Materi</div>
+        </div>
+        
+        <div class="map-icon" id="contoh-icon" style="top: 180px; left: 50%;">
+            <div class="icon-label">Contoh Soal</div>
+        </div>
+        
+        <div class="map-icon" id="latihan-icon" style="top: 250px; left: 75%;">
+            <div class="icon-label">Latihan Soal</div>
         </div>
     </div>
+    
+    <div class="ocean"></div>
+</div>
+
+<script>
+// Pastikan Anda juga memperbarui JavaScript di main.js agar menggunakan ID baru:
+// document.getElementById('materi-icon').addEventListener('click', ...);
+</script>
 
     <!-- Modal untuk Materi -->
     <div class="modal" id="materi-modal">
@@ -72,14 +53,10 @@
             </div>
             <div class="modal-body">
                 <div class="teacher-section">
-                    <div class="teacher-section">
-						<div class="teacher"></div>
-						<div class="teacher-name">Pak Budi</div>
-						<p>Guru Matematika</p>
-					</div>
-                    <div class="teacher-name">Pak Budi</div>
-                    <p>Guru Matematika</p>
-                </div>
+                    <div class="teacher teacher-fafa"></div>
+					<div class="teacher-name">Miss Fafaa</div>
+					<p>Guru Matematika</p>
+				</div>
                 <div class="content-section">
                     <div class="content-tabs">
                         <div class="tab active" data-tab="pengertian">Pengertian</div>
@@ -153,14 +130,11 @@
                 <button class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
-						<div class="teacher-section">
-							<div class="teacher"></div>
-							<div class="teacher-name">Pak Budi</div>
-							<p>Guru Matematika</p>
-						</div>
-                    <div class="teacher-name">Pak Budi</div>
-                    <p>Guru Matematika</p>
-                </div>
+				<div class="teacher-section">
+                    <div class="teacher teacher-alipp"></div>
+					<div class="teacher-name">Miss Alipp</div>
+					<p>Guru Matematika</p>
+				</div>
                 <div class="content-section">
                     <div class="content-tabs">
                         <div class="tab active" data-tab="contoh1">Contoh 1</div>
@@ -250,14 +224,11 @@
                 <button class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
-						<div class="teacher-section">
-							<div class="teacher"></div>
-							<div class="teacher-name">Pak Budi</div>
-							<p>Guru Matematika</p>
-						</div>
-                    <div class="teacher-name">Pak Budi</div>
-                    <p>Guru Matematika</p>
-                </div>
+				<div class="teacher-section">
+                    <div class="teacher teacher-arsad"></div>
+					<div class="teacher-name">Mr. Arsad</div>
+					<p>Guru Matematika</p>
+				</div>
                 <div class="content-section">
                     <div class="content-tabs">
                         <div class="tab active" data-tab="latihan1">Latihan 1</div>
