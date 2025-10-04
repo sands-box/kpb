@@ -8,18 +8,20 @@
 		document.getElementById(modalId).style.display = 'none';
 	}
 
-	// Event listeners untuk rumah
-	document.getElementById('materi-house').addEventListener('click', function() {
-		openModal('materi-modal');
-	});
+	// main.js (Ubah di sekitar baris 11)
 
-	document.getElementById('contoh-house').addEventListener('click', function() {
-		openModal('contoh-modal');
-	});
+// Event listeners untuk ikon peta
+document.getElementById('materi-icon').addEventListener('click', function() {
+	openModal('materi-modal');
+});
 
-	document.getElementById('latihan-house').addEventListener('click', function() {
-		openModal('latihan-modal');
-	});
+document.getElementById('contoh-icon').addEventListener('click', function() {
+	openModal('contoh-modal');
+});
+
+document.getElementById('latihan-icon').addEventListener('click', function() {
+	openModal('latihan-modal');
+});
 
 	// Event listeners untuk tombol close
 	document.querySelectorAll('.close-btn').forEach(button => {
